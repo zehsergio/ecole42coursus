@@ -3,7 +3,7 @@
 ## ARGUMENTS
 
 NAME	= libft.a
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g
 cc	= gcc
 
 ################################################################################
@@ -22,6 +22,8 @@ SRC_FILES = ft_isalpha.c \
 	ft_memset.c \
 	ft_bzero.c \
 	ft_memcpy.c \
+	ft_memmove.c \
+	ft_strlcpy.c \
 
 OBJ_FILES =  $(SRC_FILES:.c=.o)
 
