@@ -200,7 +200,3 @@ Write clean code, add comments, and test every function.
 Your `libft` will become your **personal toolbox** for every 42 project.
 
 Happy coding! 🎉
-
----
-
-Would you like me to generate a **Markdown (.md)** file ready for GitHub (with proper formatting, emojis, tables, etc.) so you can just drop it in your repo?
