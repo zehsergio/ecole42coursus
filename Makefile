@@ -27,6 +27,11 @@ SRC_FILES = ft_isalpha.c \
 	ft_strlcat.c \
 	ft_toupper.c \
 	ft_tolower.c \
+	ft_strchr.c \
+	ft_strrchr.c \
+	ft_strncmp.c \
+	ft_memchr.c \
+	ft_memcmp.c \
 
 OBJ_FILES =  $(SRC_FILES:.c=.o)
 
