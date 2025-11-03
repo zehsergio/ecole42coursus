@@ -1,0 +1,6 @@
+libft-unit-test/
+utilities/
+review/
+.vscode/
+libft/.vscode/
+.DS_Store 
