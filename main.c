@@ -30,4 +30,19 @@ int	main(void)
 	printf("'p' → ft: %d | real: %d\n", ft_isalnum('p'), isalnum('p'));
 	printf("'D' → ft: %d | real: %d\n", ft_isalnum('D'), isalnum('D'));
 	printf("'?' → ft: %d | real: %d\n", ft_isalnum('?'), isalnum('?'));
+
+	// isascii
+	printf("\n---- ft_isascii vs isascii ----\n");
+	printf("'128' → ft: %d | real: %d\n", ft_isascii(128), isascii(128));
+	printf("'65'  → ft: %d | real: %d\n", ft_isascii(65),  isascii(65));
+	printf("'0'   → ft: %d | real: %d\n", ft_isascii(0), 	 isascii(0));
+	printf("'255' → ft: %d | real: %d\n", ft_isascii(255), isascii(255));
+
+	// isprint
+	printf("\n---- ft_isprint vs isprint ----\n");
+	printf("' '  → ft: %d | real: %d\n", ft_isprint(' '),  isprint(' '));
+	printf("'~'  → ft: %d | real: %d\n", ft_isprint('~'),  isprint('~'));
+	printf("'127'→ ft: %d | real: %d\n", ft_isprint(127), isprint(127));
+	printf("'31' → ft: %d | real: %d\n", ft_isprint(31),  isprint(31));
+	printf("'¡'  → ft: %d | real: %d\n", ft_isprint('0xA1'),  isprint('0xA1'));
 }
