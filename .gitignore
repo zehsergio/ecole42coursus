@@ -4,5 +4,4 @@ review/
 .vscode/
 libft/.vscode/
 .DS_Store 
-utilities.txt
 *.a
