@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdias-ju <jdias-ju@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jdias-ju <jdias-ju@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 10:57:46 by jdias-ju          #+#    #+#             */
-/*   Updated: 2025/11/04 10:57:46 by jdias-ju         ###   ########.ch       */
+/*   Created: 2025/11/04 11:16:21 by jdias-ju          #+#    #+#             */
+/*   Updated: 2025/11/04 11:16:21 by jdias-ju         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,4 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		p2++;
 	}
 	return (0);
-}
-
-int	main(void)
-{
-	char test[] = "test";
-	char test1[] = "tesla";
-	printf("%d\n",ft_memcmp(test, test1, 4));
-
 }
