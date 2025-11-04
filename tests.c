@@ -1,11 +1,11 @@
 #include "libft.h"
 #include <stdio.h>
 #include <ctype.h>
-#include <string.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 int	main(void)
+
 {
 	// isalpha
 	printf("\n---- ft_isalpha vs isalpha ----\n\n");
@@ -44,5 +44,4 @@ int	main(void)
 	printf("'~'  → ft: %d | real: %d\n", ft_isprint('~'),  isprint('~'));
 	printf("'127'→ ft: %d | real: %d\n", ft_isprint(127), isprint(127));
 	printf("'31' → ft: %d | real: %d\n", ft_isprint(31),  isprint(31));
-	printf("'¡'  → ft: %d | real: %d\n", ft_isprint('0xA1'),  isprint('0xA1'));
 }
