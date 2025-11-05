@@ -6,3 +6,4 @@ libft/.vscode/
 .DS_Store 
 *.a
 tests
+libft-main/

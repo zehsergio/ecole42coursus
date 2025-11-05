@@ -1,17 +1,16 @@
 # =======================
-#   Libft - Makefile
+#   Libft - Simple Makefile
 # =======================
 
-# ---- Basic config ----
 NAME     = libft.a
 CC       = cc
-CFLAGS   = -Wall -Wextra -Werror
+CFLAGS   = -Wall -Wextra -Werror -g   # -g works for both gdb and lldb
 CPPFLAGS = -I .
 AR       = ar
 ARFLAGS  = rcs
 RM       = rm -f
+RMDIR    = rm -rf
 
-# ---- Source files ----
 SRC = \
 	ft_isalpha.c \
 	ft_isdigit.c \
@@ -34,47 +33,31 @@ SRC = \
 	ft_memcmp.c \
 	ft_strnstr.c
 
-# ---- Object files ----
 OBJ = $(SRC:.c=.o)
 
-# ---- Debug mode (make DEBUG=1 or make debug) ----
-ifeq ($(DEBUG),1)
-CFLAGS += -g -O0
-endif
-
-# ---- Default rule ----
+# ---------- Rules ----------
 all: $(NAME)
 
-# ---- Build library ----
 $(NAME): $(OBJ)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
-	@echo "✅ Library $(NAME) compiled successfully."
 
-# ---- Compile .c to .o ----
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
-# ---- Build test executable ----
+# Test executable (uses tests.c and links with the library)
 tests: $(NAME) tests.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) tests.c $(NAME) -o tests
-	@echo "✅ Tests compiled. Run with: ./tests"
+	@echo "Run: ./tests"
 
-# ---- Build everything in debug mode ----
-debug: CFLAGS += -g -O0
-debug: re tests
-	@echo "🐞 Debug build ready. Use 'lldb ./tests' to debug."
-
-# ---- Clean object files ----
 clean:
 	$(RM) $(OBJ)
-	@echo "🧹 Object files removed."
+	$(RMDIR) tests.dSYM
+	@echo "Object files and tests.dSYM removed"
 
-# ---- Clean everything ----
 fclean: clean
 	$(RM) $(NAME) tests
-	@echo "🗑️  Library and test binary removed."
+	@echo "Library and test binary removed"
 
-# ---- Rebuild everything ----
 re: fclean all
 
-.PHONY: all clean fclean re tests debug
+.PHONY: all clean fclean re tests

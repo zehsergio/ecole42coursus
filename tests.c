@@ -44,4 +44,6 @@ int	main(void)
 	printf("'~'  → ft: %d | real: %d\n", ft_isprint('~'),  isprint('~'));
 	printf("'127'→ ft: %d | real: %d\n", ft_isprint(127), isprint(127));
 	printf("'31' → ft: %d | real: %d\n", ft_isprint(31),  isprint(31));
+
+	return 0;
 }
