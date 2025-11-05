@@ -1,19 +1,19 @@
+# =======================
+#   Libft - Makefile
+# =======================
 
-################################################################################
-## ARGUMENTS
+# ---- Basic config ----
+NAME     = libft.a
+CC       = cc
+CFLAGS   = -Wall -Wextra -Werror
+CPPFLAGS = -I .
+AR       = ar
+ARFLAGS  = rcs
+RM       = rm -f
 
-NAME	= libft.a
-CFLAGS	= -Wall -Wextra -Werror -g
-cc	= gcc
-
-################################################################################
-## SOURCES
-
-HEADER = libft.h
-
-OPTION = -c -I $(HEADER)
-
-SRC_FILES = ft_isalpha.c \
+# ---- Source files ----
+SRC = \
+	ft_isalpha.c \
 	ft_isdigit.c \
 	ft_isalnum.c \
 	ft_isascii.c \
@@ -32,25 +32,49 @@ SRC_FILES = ft_isalpha.c \
 	ft_strncmp.c \
 	ft_memchr.c \
 	ft_memcmp.c \
-	ft_strnstr.c \
+	ft_strnstr.c
 
-OBJ_FILES =  $(SRC_FILES:.c=.o)
+# ---- Object files ----
+OBJ = $(SRC:.c=.o)
 
-################################################################################
-## RULES
+# ---- Debug mode (make DEBUG=1 or make debug) ----
+ifeq ($(DEBUG),1)
+CFLAGS += -g -O0
+endif
 
+# ---- Default rule ----
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(CFLAGS) $(OPTION) $(SRC_FILES)
-	ar rc $(NAME) $(OBJ_FILES)
-	
-clean: 
-	rm -f $(OBJ_FILES)
+# ---- Build library ----
+$(NAME): $(OBJ)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
+	@echo "✅ Library $(NAME) compiled successfully."
 
+# ---- Compile .c to .o ----
+%.o: %.c libft.h
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+
+# ---- Build test executable ----
+tests: $(NAME) tests.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) tests.c $(NAME) -o tests
+	@echo "✅ Tests compiled. Run with: ./tests"
+
+# ---- Build everything in debug mode ----
+debug: CFLAGS += -g -O0
+debug: re tests
+	@echo "🐞 Debug build ready. Use 'lldb ./tests' to debug."
+
+# ---- Clean object files ----
+clean:
+	$(RM) $(OBJ)
+	@echo "🧹 Object files removed."
+
+# ---- Clean everything ----
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME) tests
+	@echo "🗑️  Library and test binary removed."
 
+# ---- Rebuild everything ----
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re tests debug
