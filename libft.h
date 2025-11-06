@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-ju <jdias-ju@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 12:46:56 by jdias-ju          #+#    #+#             */
-/*   Updated: 2025/11/05 12:47:01 by jdias-ju         ###   ########.ch       */
+/*   Created: 2025/11/06 11:03:45 by jdias-ju          #+#    #+#             */
+/*   Updated: 2025/11/06 11:03:50 by jdias-ju         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <unistd.h>
 # include <stdio.h>
+# include <stdio.h>
+# include <stddef.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -38,4 +42,5 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
+void	ft_putchar_fd(char c, int fd);
 #endif

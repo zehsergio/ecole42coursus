@@ -25,5 +25,5 @@ lldb ./tests
 (lldb) frame variable            		# show locals
 (lldb) p i                       		# print expression
 (lldb) p (char)c                 		# print char (variable is 'c' in this example)
-(lldb) bt                        		# backtrace
+(lldb) bt                      			# backtrace
 ```

@@ -34,6 +34,7 @@ SRC = \
 	ft_strnstr.c \
 	ft_atoi.c \
 	ft_calloc.c \
+	fr_putchar_fd.c \
 
 OBJ = $(SRC:.c=.o)
 

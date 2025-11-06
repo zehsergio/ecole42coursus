@@ -45,5 +45,16 @@ int	main(void)
 	printf("'127'→ ft: %d | real: %d\n", ft_isprint(127), isprint(127));
 	printf("'31' → ft: %d | real: %d\n", ft_isprint(31),  isprint(31));
 
+
+	// calloc
+	printf("\n---- calloc ----\n");
+	int	*calloc_test;
+	calloc_test = ft_calloc(6, sizeof(*calloc_test));
+	printf("Calloc an array of 6 int\n    ");
+	for(int i = 0; i < 6; i++)
+		printf("%d ", calloc_test[i]);
+	printf("\n");
+	free(calloc_test);
+
 	return 0;
 }
