@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-ju <jdias-ju@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 11:18:56 by jdias-ju          #+#    #+#             */
-/*   Updated: 2025/11/06 11:22:51 by jdias-ju         ###   ########.ch       */
+/*   Created: 2025/11/10 10:39:36 by jdias-ju          #+#    #+#             */
+/*   Updated: 2025/11/10 10:39:40 by jdias-ju         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long	nbr;
+	long int	nbr;
 
 	nbr = n;
 	if (nbr < 0)

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-ju <jdias-ju@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 11:24:56 by jdias-ju          #+#    #+#             */
-/*   Updated: 2025/11/06 11:39:19 by jdias-ju         ###   ########.ch       */
+/*   Created: 2025/11/10 10:33:38 by jdias-ju          #+#    #+#             */
+/*   Updated: 2025/11/10 10:33:44 by jdias-ju         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *str, int fd);
-// void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_fd(int n, int fd);
+char	*ft_strdup(const char *s1);
+void	ft_putendl_fd(char *s, int fd);
 #endif

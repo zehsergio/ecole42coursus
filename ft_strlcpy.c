@@ -5,10 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-ju <jdias-ju@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 20:43:54 by jdias-ju          #+#    #+#             */
-/*   Updated: 2025/10/29 20:44:02 by jdias-ju         ###   ########.ch       */
+/*   Created: 2025/11/10 10:42:06 by jdias-ju          #+#    #+#             */
+/*   Updated: 2025/11/10 10:42:06 by jdias-ju         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+	DESCRIPTION :
+	The function ft_strlcpy copies up to size - 1 characters from the given
+	string src to the given string dst, nul-terminating the result.
+
+	Note : space for the terminating \0 character must be included in dstsize.
+
+	RETURN VALUE :
+	The total length of the string that it tried to create : the length of
+	src, with the goal to facilitate truncaction detection.
+*/
 
 #include "libft.h"
 

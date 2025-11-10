@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-ju <jdias-ju@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 17:47:11 by jdias-ju          #+#    #+#             */
-/*   Updated: 2025/11/10 10:38:58 by jdias-ju         ###   ########.ch       */
+/*   Created: 2025/11/10 10:30:26 by jdias-ju          #+#    #+#             */
+/*   Updated: 2025/11/10 10:33:10 by jdias-ju         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 	DESCRIPTION :
-	The function ft_memset fills the first len bytes of the memory area
-	pointed	to by b with the byte c. Both b and c are interpreted as 
-	unsigned char.
+	The function ft_putendl_fd writes the given string to the given
+	file descriptor followed by a new line.
 
 	RETURN VALUE :
-	A pointer to memory area s.
+	None.
 */
 
 #include "libft.h"
 
-void	*ft_memset(void *dest, int c, size_t len)
+void	ft_putendl_fd(char *s, int fd)
 {
-	unsigned char	*p;
-
-	p = dest;
-	while (len-- > 0)
-		*p++ = (unsigned char)c;
-	return (dest);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

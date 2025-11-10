@@ -5,10 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-ju <jdias-ju@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 10:59:52 by jdias-ju          #+#    #+#             */
-/*   Updated: 2025/11/03 11:09:32 by jdias-ju         ###   ########.ch       */
+/*   Created: 2025/11/10 10:42:39 by jdias-ju          #+#    #+#             */
+/*   Updated: 2025/11/10 10:42:39 by jdias-ju         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+	DESCRIPTION :
+	The function ft_strncmp compares the first n bytes of the given strings
+	s1 and s2.
+
+	RETURN VALUE :
+	An integer less than, equal to, or greater than zero if one of the first
+	n bytes of s1 is found to be less than, to match, or to be greater than 
+	s2.
+*/
 
 #include "libft.h"
 

@@ -5,10 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-ju <jdias-ju@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/02 23:18:23 by jdias-ju          #+#    #+#             */
-/*   Updated: 2025/11/02 23:18:28 by jdias-ju         ###   ########.ch       */
+/*   Created: 2025/11/10 10:41:14 by jdias-ju          #+#    #+#             */
+/*   Updated: 2025/11/10 10:41:14 by jdias-ju         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+	DESCRIPTION :
+	The function ft_strlcat appends the given string src to the end of 
+	dst. It will append at most dstsize - ft_strlen(dst) - 1 and 
+	nul-terminate the result.
+
+	Note : space for the terminating \0 character must be included in dstsize.
+
+	RETURN VALUE :
+	The total length of the string that it tried to create : the initial
+	length of dst + the length of src, with the goal to facilitate
+	truncaction detection.
+*/
 
 #include "libft.h"
 

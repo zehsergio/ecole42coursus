@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-ju <jdias-ju@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 17:47:11 by jdias-ju          #+#    #+#             */
-/*   Updated: 2025/11/10 10:38:58 by jdias-ju         ###   ########.ch       */
+/*   Created: 2025/11/10 09:53:44 by jdias-ju          #+#    #+#             */
+/*   Updated: 2025/11/10 10:04:39 by jdias-ju         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-	DESCRIPTION :
-	The function ft_memset fills the first len bytes of the memory area
-	pointed	to by b with the byte c. Both b and c are interpreted as 
-	unsigned char.
-
-	RETURN VALUE :
-	A pointer to memory area s.
-*/
+// DESCRIPTION
+//  The strdup() function allocates sufficient memory for a 
+// 	copy of the string s1, does the copy, and returns a pointer to it. 
+// 	The pointer may subsequently be used as an argument to the function free(3).
 
 #include "libft.h"
 
-void	*ft_memset(void *dest, int c, size_t len)
+char	*ft_strdup(const char *s1)
 {
-	unsigned char	*p;
+	char	*s2;
+	size_t	len;
 
-	p = dest;
-	while (len-- > 0)
-		*p++ = (unsigned char)c;
-	return (dest);
+	len = ft_strlen(s1) + 1;
+	s2 = malloc(len * sizeof(char));
+	if (!s2)
+		return (NULL);
+	ft_strlcpy(s2, s1, len);
+	return (s2);
 }

@@ -5,10 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-ju <jdias-ju@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 10:49:08 by jdias-ju          #+#    #+#             */
-/*   Updated: 2025/11/03 10:49:18 by jdias-ju         ###   ########.ch       */
+/*   Created: 2025/11/10 10:43:08 by jdias-ju          #+#    #+#             */
+/*   Updated: 2025/11/10 10:43:08 by jdias-ju         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+	DESCRIPTION :
+	The function ft_strrchr finds the last occurrence of character c in
+	string str.
+
+	RETURN VALUE :
+	A pointer to the last occurrence of c in str.
+	NULL if c is not found.
+*/
 
 #include "libft.h"
 
