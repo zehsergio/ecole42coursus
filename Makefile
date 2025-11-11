@@ -40,7 +40,8 @@ SRC = \
  	ft_putnbr_fd.c \
 	ft_putendl_fd.c \
 	ft_substr.c \
-	ft_strjoin.c
+	ft_strjoin.c \
+	ft_split.c
 
 OBJ = $(SRC:.c=.o)
 

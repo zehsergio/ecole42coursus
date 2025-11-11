@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-ju <jdias-ju@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/10 20:25:25 by jdias-ju          #+#    #+#             */
-/*   Updated: 2025/11/11 10:56:31 by jdias-ju         ###   ########.ch       */
+/*   Created: 2025/11/11 13:52:31 by jdias-ju          #+#    #+#             */
+/*   Updated: 2025/11/11 14:56:38 by jdias-ju         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,55 +54,44 @@ static char	*word_splitter(const char *s, char c)
 	return (word);
 }
 
+static	void	free_array(char **words, int j)
+{
+	while (j-- > 0)
+		free(words[j]);
+	free(words);
+}
+
+static void	skip_seps(const char *s, char c, int *i)
+{
+	while (s[*i] == c)
+		(*i)++;
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**words;
 	int		i;
 	int		j;
 
-	i = 0;
-	j = 0;
 	if (!s)
 		return (NULL);
-	words = (char **) malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	words = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (!words)
 		return (NULL);
+	i = 0;
+	j = 0;
 	while (s[i])
 	{
-		if (s[i] != c)
-		{
-			words[j] = word_splitter(&s[i], c);
-			while (s[i] && s[i] != c)
-				i++;
-			j++;
-		}
-		else
+		skip_seps(s, c, &i);
+		if (!s[i])
+			break ;
+		words[j] = word_splitter(&s[i], c);
+		if (!words[j])
+			return (free_array(words, j), NULL);
+		while (s[i] && s[i] != c)
 			i++;
+		j++;
 	}
-	words[j] = 0;
+	words[j] = NULL;
 	return (words);
-}
-
-int main(void)
-{
-    const char *str = "  hello world 42 school  ";
-    char sep = ' ';
-    char **v = ft_split(str, sep);
-
-    printf("Input: \"%s\"\nSep  : '%c'\n\n", str, sep);
-
-    if (!v) {
-        puts("ft_split returned NULL");
-        return 1;
-    }
-
-    // Mostra resultado e endereços (útil para debug de ponteiros)
-    for (int i = 0; v[i]; i++) {
-        printf("v[%d] @ %p -> \"%s\"\n", i, (void*)v[i], v[i]);
-    }
-
-    // Libera tudo
-    for (int i = 0; v[i]; i++) free(v[i]);
-    free(v);
-    return 0;
 }

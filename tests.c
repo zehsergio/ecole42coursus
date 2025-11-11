@@ -56,5 +56,26 @@ int	main(void)
 	printf("\n");
 	free(calloc_test);
 
+	// split
+    const char *str = "  hello world 42 school  ";
+    char sep = ' ';
+    char **v = ft_split(str, sep);
+
+    printf("Input: \"%s\"\nSep  : '%c'\n\n", str, sep);
+
+    if (!v) {
+        puts("ft_split returned NULL");
+        return 1;
+    }
+
+    // Mostra resultado e endereços (útil para debug de ponteiros)
+    for (int i = 0; v[i]; i++) {
+        printf("v[%d] @ %p -> \"%s\"\n", i, (void*)v[i], v[i]);
+    }
+
+    // Libera tudo
+    for (int i = 0; v[i]; i++) free(v[i]);
+    free(v);
+
 	return 0;
 }
