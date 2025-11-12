@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdias-ju <jdias-ju@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: jdias-ju <jdias-ju@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 13:33:21 by jdias-ju          #+#    #+#             */
-/*   Updated: 2025/11/11 13:33:21 by jdias-ju         ###   ########.ch       */
+/*   Created: 2025/11/12 11:41:01 by jdias-ju          #+#    #+#             */
+/*   Updated: 2025/11/12 11:41:01 by jdias-ju         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,5 @@ void	ft_putendl_fd(char *s, int fd);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
 #endif

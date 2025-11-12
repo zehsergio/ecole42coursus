@@ -8,7 +8,7 @@ int	main(void)
 
 {
 	// isalpha
-	printf("\n---- ft_isalpha vs isalpha ----\n\n");
+	printf("\n---- ft_isalpha vs isalpha ----\n");
 	printf("'5' → ft: %d | real: %d\n", ft_isalpha('5'), isalpha('5'));
 	printf("'p' → ft: %d | real: %d\n", ft_isalpha('p'), isalpha('p'));
 	printf("'O' → ft: %d | real: %d\n", ft_isalpha('O'), isalpha('O'));
@@ -57,6 +57,7 @@ int	main(void)
 	free(calloc_test);
 
 	// split
+	printf("\n---- ft_split ----\n");
     const char *str = "  hello world 42 school  ";
     char sep = ' ';
     char **v = ft_split(str, sep);
@@ -76,6 +77,12 @@ int	main(void)
     // Libera tudo
     for (int i = 0; v[i]; i++) free(v[i]);
     free(v);
+
+	// itoa
+	printf("\n---- ft_itoa ----\n");
+	long i = -12345;
+	char *result = ft_itoa(i);
+	printf("result: %s\n", result);
 
 	return 0;
 }
