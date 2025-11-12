@@ -4,6 +4,15 @@
 #include <stdlib.h>
 #include <string.h>
 
+	// even to upper: to test ft_strmapi.c
+	char even_to_upper(unsigned int i, char c)
+	{
+		if (i % 2 == 0)
+			return ft_toupper(c);
+		return c;
+	}
+	// even to upper: to test ft_strmapi.c
+
 int	main(void)
 
 {
@@ -15,6 +24,7 @@ int	main(void)
 	printf("'?' → ft: %d | real: %d\n", ft_isalpha('?'), isalpha('?'));
 	printf("'Z' → ft: %d | real: %d\n", ft_isalpha('Z'), isalpha('Z'));
 	printf("'a' → ft: %d | real: %d\n", ft_isalpha('a'), isalpha('a'));
+	// isalpha
 
 	// isdigit
 	printf("\n---- ft_isdigit vs isdigit ----\n");
@@ -23,6 +33,7 @@ int	main(void)
 	printf("'0' → ft: %d | real: %d\n", ft_isdigit('0'), isdigit('0'));
 	printf("'?' → ft: %d | real: %d\n", ft_isdigit('?'), isdigit('?'));
 	printf("'9' → ft: %d | real: %d\n", ft_isdigit('Z'), isdigit('Z'));
+	// isdigit
 
 	// isalnum
 	printf("\n---- ft_isalnum vs isalnum ----\n");
@@ -30,13 +41,15 @@ int	main(void)
 	printf("'p' → ft: %d | real: %d\n", ft_isalnum('p'), isalnum('p'));
 	printf("'D' → ft: %d | real: %d\n", ft_isalnum('D'), isalnum('D'));
 	printf("'?' → ft: %d | real: %d\n", ft_isalnum('?'), isalnum('?'));
-
+	// isalnum
+	
 	// isascii
 	printf("\n---- ft_isascii vs isascii ----\n");
 	printf("'128' → ft: %d | real: %d\n", ft_isascii(128), isascii(128));
 	printf("'65'  → ft: %d | real: %d\n", ft_isascii(65),  isascii(65));
 	printf("'0'   → ft: %d | real: %d\n", ft_isascii(0), 	 isascii(0));
 	printf("'255' → ft: %d | real: %d\n", ft_isascii(255), isascii(255));
+	// isascii
 
 	// isprint
 	printf("\n---- ft_isprint vs isprint ----\n");
@@ -44,7 +57,7 @@ int	main(void)
 	printf("'~'  → ft: %d | real: %d\n", ft_isprint('~'),  isprint('~'));
 	printf("'127'→ ft: %d | real: %d\n", ft_isprint(127), isprint(127));
 	printf("'31' → ft: %d | real: %d\n", ft_isprint(31),  isprint(31));
-
+	// isprint
 
 	// calloc
 	printf("\n---- calloc ----\n");
@@ -55,8 +68,9 @@ int	main(void)
 		printf("%d ", calloc_test[i]);
 	printf("\n");
 	free(calloc_test);
+	// calloc
 
-	// split
+	// *****split
 	printf("\n---- ft_split ----\n");
     const char *str = "  hello world 42 school  ";
     char sep = ' ';
@@ -77,12 +91,24 @@ int	main(void)
     // Libera tudo
     for (int i = 0; v[i]; i++) free(v[i]);
     free(v);
+	// *****split
 
 	// itoa
 	printf("\n---- ft_itoa ----\n");
 	long i = -12345;
 	char *result = ft_itoa(i);
 	printf("result: %s\n", result);
+	// itoa
+
+	// strmapi
+	printf("\n---- ft_strmapi ----\n");
+	char	*base_str = "hello world";
+	char	*new_str = ft_strmapi(base_str, even_to_upper);
+	
+	printf("Original string: %s\n", base_str);
+    printf("Transformed string: %s\n", new_str);
+	
+	free(new_str);
 
 	return 0;
 }

@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-ju <jdias-ju@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 14:44:46 by jdias-ju          #+#    #+#             */
-/*   Updated: 2025/11/12 14:46:48 by jdias-ju         ###   ########.ch       */
+/*   Created: 2025/11/12 20:26:48 by jdias-ju          #+#    #+#             */
+/*   Updated: 2025/11/12 20:26:48 by jdias-ju         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 static int	digit_count(long nbr)
 {
